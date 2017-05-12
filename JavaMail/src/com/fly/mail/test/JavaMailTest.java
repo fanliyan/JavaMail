@@ -16,10 +16,12 @@ public class JavaMailTest {
 		mailInfo.setToAddress("ifanliyan@qq.com");
 		mailInfo.setSubject("这是一封测试邮件");
 		mailInfo.setContent("你好！这是一封测试邮件");
-		
+		 String[] fileName = {"手艺人.docx"};
+		 mailInfo.setAttachFileNames(fileName);
 		try {
-			Email.sendTextMail(mailInfo);
+			//Email.sendTextMail(mailInfo);
 			//Email.sendHtmlMail(mailInfo);
+			Email.sendComplexMail(mailInfo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
